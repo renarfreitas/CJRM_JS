@@ -3,6 +3,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+title {
+    text-align: center;
+}
+
 body {
     background-image: linear-gradient(to right, #7AA5BF, #BDDEF2);
     font-family: Arial, Helvetica, sans-serif;
@@ -11,15 +15,11 @@ body {
 
 main {
     background-color: white;
-    border-radius: 10px; /*Borda da caixa arredondada*/
+    border-radius: 0px 10px ; /*Borda da caixa arredondada*/
     box-shadow: 5px 5px 15px #567885d8; /*Sombra da caixa*/
     width: 600px;
     padding: 10px;
     margin: auto;
-}
-
-.result {
-    display: none;
 }
 
 h1 {
@@ -33,6 +33,7 @@ h1 {
 h2{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
+    text-align: center;
     color: #224459;
 }
 
@@ -41,6 +42,19 @@ p {
     text-align: justify;
 }
 
-.button {
-    justify-content: center;
+button {
+    text: center;
+}
+
+footer > p {
+    text-align: center;
+}
+
+footer > p > a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.d-none {
+    display: none;
 }

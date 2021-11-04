@@ -22,39 +22,3 @@ Link do repositório do curso: https://github.com/roger-melo-treinamentos/curso-
 Ps: se você não conseguiu fazer tudo o que foi pedido acima, abra a issue mesmo assim =)
 Ps2: o uso do Bootstrap (ou qualquer outra lib CSS) é opcional.
 */
-const form  = document.querySelector('form')
-const div = document.querySelector('.result')
-
-let answares = ['1', '1', '1', '1']
-
-form.addEventListener('submit', event => {
-    event.preventDefault()
-
-    let score = 0
-    const respostas = [
-        form.question1.value,
-        form.question2.value,
-        form.question3.value,
-        form.question4.value
-    ]
-
-    respostas.forEach( (resposta, index ) => {
-        if(resposta === answares[index]) {
-            score += 25
-        }
-    })
-
-    p.style.display = ''
-   
-
-    let counter = 0
-
-    const time = setInterval(()=>{
-        if(counter === score){
-            clearInterval(time)
-        }
-        
-        p.textContent = `você acertou: ${score}%`
-        counter++
-    }, 10)
-})
