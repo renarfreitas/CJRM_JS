@@ -22,3 +22,43 @@ Link do repositório do curso: https://github.com/roger-melo-treinamentos/curso-
 Ps: se você não conseguiu fazer tudo o que foi pedido acima, abra a issue mesmo assim =)
 Ps2: o uso do Bootstrap (ou qualquer outra lib CSS) é opcional.
 */
+
+const form = document.querySelector('.quiz-form')
+const finalResult = document.querySelector('.result')
+const correctAnswers = ['C', 'D', 'A', 'B']
+
+form.addEventListener('submit', event => {
+    event.preventDefault()
+
+    const userResponses = [
+        form.inputQuestion1.value,
+        form.inputQuestion2.value,
+        form.inputQuestion3.value,
+        form.inputQuestion4.value,
+    ]
+    
+    let score = 0
+    
+
+    userResponses.forEach(( response, index) => {
+        if(response === correctAnswers[index]) {
+            score += 25
+        }
+    })
+
+    scrollTo(0,0)
+
+    finalResult.classList.remove('d-none')
+    
+    let counter
+
+    const time = setInterval( () => {
+        if(counter === score){
+            clearInterval(time)
+        }
+
+        
+        finalResult.querySelector('span').textContent = `${score}`
+        counter++
+    }, 10)
+})
