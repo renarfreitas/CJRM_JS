@@ -24,41 +24,60 @@ Ps2: o uso do Bootstrap (ou qualquer outra lib CSS) é opcional.
 */
 
 const form = document.querySelector('.quiz-form')
-const finalResult = document.querySelector('.result')
+const finalScoreContainer = document.querySelector('.final-score-container')
+
 const correctAnswers = ['C', 'D', 'A', 'B']
 
-form.addEventListener('submit', event => {
-    event.preventDefault()
+let score = 0
 
-    const userResponses = [
-        form.inputQuestion1.value,
-        form.inputQuestion2.value,
-        form.inputQuestion3.value,
-        form.inputQuestion4.value,
-    ]
-    
-    let score = 0
-    
+const getUserAnswers = ()=>{
+    let userResponses = []
 
+    correctAnswers.forEach((_, index) => {
+        const userAnswer = form[`inputQuestion${index+1}`].value
+        userResponses.push(userAnswer)
+    })
+
+    return userResponses    
+    }
+
+const calculateUserAnswers = (userResponses) => {
     userResponses.forEach(( response, index) => {
-        if(response === correctAnswers[index]) {
+        const isUserAnswerCorrect = response === correctAnswers[index]
+
+        if(isUserAnswerCorrect) {
             score += 25
         }
     })
+}
 
-    scrollTo(0,0)
+const showFinalScore = () => {
+    scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+    finalScoreContainer.classList.remove('d-none')
+}
 
-    finalResult.classList.remove('d-none')
-    
-    let counter
+const animateFinalScore = () => {
+    let counter = 0
 
-    const time = setInterval( () => {
+    const timer = setInterval( () => {
         if(counter === score){
-            clearInterval(time)
+            clearInterval(timer)
         }
 
-        
-        finalResult.querySelector('span').textContent = `${score}`
-        counter++
-    }, 10)
+        finalScoreContainer.querySelector('span').textContent = `${counter++}%`
+    }, 100)
+}
+
+form.addEventListener('submit', event => {
+    event.preventDefault()
+ 
+    const userResponses = getUserAnswers()
+
+    calculateUserAnswers(userResponses)
+    showFinalScore()
+    animateFinalScore()
 })
