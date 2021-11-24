@@ -7,7 +7,8 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
-
+const orderNames = names.map(name => name)
+console.log(orderNames.sort())
 /*
   02
 
@@ -23,6 +24,9 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
+const charactersOrdend = characters.sort((objOne, objTwo) => objOne.id - objTwo.id)
+
+console.log(charactersOrdend)
 /*
   03
 
@@ -33,6 +37,8 @@ const characters = [
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
+const orderNumbers = numbers.sort((numberOne, numberTwo) => numberOne - numberTwo)
+console.log(orderNumbers)
 /*
   04
 
@@ -41,6 +47,12 @@ const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
+const numberGreateThen50 = randomNumbers
+  .filter(number => number > 50)
+  .sort((numberOne, numberTow) => numberTow - numberOne)
+  .pop()
+
+console.log(numberGreateThen50)
 /*
   05
 
@@ -51,6 +63,9 @@ const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const alphaPeople = people.sort((b, a) => b-a)
+
+console.log(alphaPeople)
 /*
   06
   
