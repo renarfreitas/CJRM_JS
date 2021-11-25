@@ -5,10 +5,11 @@
   - Não modifique o array original;
   - Exiba o array ordenado no console.
 */
-
 const names = ['Caio', 'André', 'Dário']
-const orderNames = names.map(name => name)
-console.log(orderNames.sort())
+
+const orderNames = names.map(name => name).sort()
+
+console.log(orderNames)
 /*
   02
 
@@ -24,7 +25,8 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const charactersOrdend = characters.sort((objOne, objTwo) => objOne.id - objTwo.id)
+const charactersOrdend = characters.map(obj => obj)
+  .sort((objOne, objTwo) => objOne.id - objTwo.id)
 
 console.log(charactersOrdend)
 /*
@@ -37,7 +39,9 @@ console.log(charactersOrdend)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const orderNumbers = numbers.sort((numberOne, numberTwo) => numberOne - numberTwo)
+const orderNumbers = numbers.map(number => number )
+  .sort((numberOne, numberTwo) => numberOne - numberTwo)
+
 console.log(orderNumbers)
 /*
   04
@@ -47,10 +51,7 @@ console.log(orderNumbers)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
-const numberGreateThen50 = randomNumbers
-  .filter(number => number > 50)
-  .sort((numberOne, numberTow) => numberTow - numberOne)
-  .pop()
+const numberGreateThen50 = randomNumbers.find(number => number > 50)
 
 console.log(numberGreateThen50)
 /*
@@ -63,7 +64,7 @@ console.log(numberGreateThen50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const alphaPeople = people.sort((b, a) => b-a)
+const alphaPeople = people.map(names => names).sort()
 
 console.log(alphaPeople)
 /*
@@ -75,6 +76,7 @@ console.log(alphaPeople)
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
+
 
 /*
   07
