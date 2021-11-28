@@ -7,9 +7,9 @@
 */
 const names = ['Caio', 'André', 'Dário']
 
-const orderNames = names.map(name => name).sort()
+const namesCopy = names.map(name => name).sort()
 
-console.log(orderNames)
+console.log(namesCopy)
 /*
   02
 
@@ -25,10 +25,11 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const charactersOrdend = characters.map(obj => obj)
-  .sort((objOne, objTwo) => objOne.id - objTwo.id)
+const charactersCopy = characters.map(obj => ({ id: obj.id, name: obj.name }))
 
-console.log(charactersOrdend)
+charactersCopy.sort((objOne, objTwo) => objOne.id - objTwo.id)
+
+console.log(charactersCopy)
 /*
   03
 
@@ -39,10 +40,11 @@ console.log(charactersOrdend)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const orderNumbers = numbers.map(number => number )
-  .sort((numberOne, numberTwo) => numberOne - numberTwo)
+const numberCopy = numbers.map(number => number)
 
-console.log(orderNumbers)
+numberCopy.sort((numberOne, numberTwo) => numberOne - numberTwo)
+
+console.log(numberCopy)
 /*
   04
 
@@ -51,9 +53,9 @@ console.log(orderNumbers)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
-const numberGreateThen50 = randomNumbers.find(number => number > 50)
+const numberGreaterThan50 = randomNumbers.find(number => number > 50)
 
-console.log(numberGreateThen50)
+console.log(numberGreaterThan50)
 /*
   05
 
@@ -64,9 +66,11 @@ console.log(numberGreateThen50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const alphaPeople = people.map(names => names).sort()
+const peopleCopy = people.map(names => names).sort()
 
-console.log(alphaPeople)
+peopleCopy.reverse()
+
+console.log(peopleCopy)
 /*
   06
   
@@ -77,7 +81,16 @@ console.log(alphaPeople)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
+const cookedIngredients = ingredients.reduce((acc, item, index, array) => {
+  const correctWordGender = /a$/.test(item) ? 'cozida' : 'cozido'
 
+  if (index === array.length -1){
+    return acc + `${item} ${correctWordGender}`
+  }
+  return acc + `${item} ${correctWordGender}, `
+}, '')
+
+console.log(cookedIngredients)
 /*
   07
   
@@ -98,6 +111,11 @@ const topBrazilmovies = [
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
 
+const peopleAmount = topBrazilmovies
+  .filter(movie => movie.distributedBy === 'Disney')
+  .reduce((acc, item) => acc + item.peopleAmount, 0)
+
+console.log(peopleAmount)
 /*
   08
   
@@ -118,13 +136,28 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
+const dogsInHumanAges = pets
+  .filter(pet => pet.type === 'Dog')
+  .map(dog => ({
+    name: dog.name,
+    age: dog.age * 7,
+    gender: dog.gender,
+    type: dog.type
+  }))
+
+console.log(dogsInHumanAges)
 /*
   09
   
   - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
+const ul = document.querySelector('.list-group')
 
+const movieNames = topBrazilmovies.reduce( (acc, movie) =>  
+  acc + `<li>${movie.title}</li>`, '')
+
+ul.innerHTML = movieNames
 /*
   10
   
