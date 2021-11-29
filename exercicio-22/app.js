@@ -25,11 +25,11 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const charactersCopy = characters.map(obj => ({ id: obj.id, name: obj.name }))
+const charactersOrderedById = characters
+  .map(({ id, name })=> ({ id, name }))
+  .sort((objOne, objTwo) => objOne.id - objTwo.id)
 
-charactersCopy.sort((objOne, objTwo) => objOne.id - objTwo.id)
-
-console.log(charactersCopy)
+console.log(charactersOrderedById)
 /*
   03
 
@@ -40,11 +40,10 @@ console.log(charactersCopy)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numberCopy = numbers.map(number => number)
+const numbersInAscendingOrder = numbers.map(number => number)
+  .sort((numberOne, numberTwo) => numberOne - numberTwo)
 
-numberCopy.sort((numberOne, numberTwo) => numberOne - numberTwo)
-
-console.log(numberCopy)
+console.log(numbersInAscendingOrder)
 /*
   04
 
@@ -52,7 +51,6 @@ console.log(numberCopy)
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
-
 const numberGreaterThan50 = randomNumbers.find(number => number > 50)
 
 console.log(numberGreaterThan50)
@@ -66,11 +64,12 @@ console.log(numberGreaterThan50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = people.map(names => names).sort()
+const peopleInReverseAlfabeticOrder = people
+  .map(names => names)
+  .sort()
+  .reverse()
 
-peopleCopy.reverse()
-
-console.log(peopleCopy)
+console.log(peopleInReverseAlfabeticOrder)
 /*
   06
   
@@ -83,11 +82,10 @@ const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
 const cookedIngredients = ingredients.reduce((acc, item, index, array) => {
   const correctWordGender = /a$/.test(item) ? 'cozida' : 'cozido'
+  const isLastItem = index === array.length -1
+  const ingredientMessage = acc + `${item} ${correctWordGender}`
 
-  if (index === array.length -1){
-    return acc + `${item} ${correctWordGender}`
-  }
-  return acc + `${item} ${correctWordGender}, `
+  return isLastItem ? ingredientMessage : `${ingredientMessage}, `
 }, '')
 
 console.log(cookedIngredients)
@@ -112,8 +110,8 @@ const topBrazilmovies = [
 ]
 
 const peopleAmount = topBrazilmovies
-  .filter(movie => movie.distributedBy === 'Disney')
-  .reduce((acc, item) => acc + item.peopleAmount, 0)
+  .filter(({ distributedBy })=> distributedBy === 'Disney')
+  .reduce((acc, { peopleAmount }) => acc + peopleAmount, 0)
 
 console.log(peopleAmount)
 /*
@@ -137,12 +135,8 @@ const pets = [
 ]
 
 const dogsInHumanAges = pets
-  .filter(pet => pet.type === 'Dog')
-  .map(dog => ({
-    name: dog.name,
-    age: dog.age * 7,
-    gender: dog.gender,
-    type: dog.type
+  .filter(({ type }) => type === 'Dog')
+  .map(({ name, age, gender, type}) => ({ name, age: age * 7, gender, type
   }))
 
 console.log(dogsInHumanAges)
@@ -154,8 +148,8 @@ console.log(dogsInHumanAges)
 */
 const ul = document.querySelector('.list-group')
 
-const movieNames = topBrazilmovies.reduce( (acc, movie) =>  
-  acc + `<li>${movie.title}</li>`, '')
+const movieNames = topBrazilmovies.reduce( (acc, {title}) =>  
+  acc + `<li>${title}</li>`, '')
 
 ul.innerHTML = movieNames
 /*
