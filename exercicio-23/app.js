@@ -24,6 +24,13 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
+const peopleCopy = people.map(({firstName, lastName, score}) => {
+  return ({firstName, lastName, score})
+})
+
+peopleCopy.sort((itemOne, itemTow) => itemOne.score - itemTow.score)
+
+console.log(peopleCopy)
 /*
   03
 
@@ -36,6 +43,13 @@ const people = [
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 
+const onleThreWordsInName = animals.filter( animal => {
+  if(animal.length === 3) {
+    return animal
+  }
+})
+
+console.log(onleThreWordsInName)
 /*
   04
 
@@ -43,8 +57,9 @@ const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
+const animaisLength = animals.map(animal => animal.length)
 
-
+console.log(animaisLength)
 /*
   05
 
@@ -61,8 +76,11 @@ const friends = [
   { id: 5, name: 'Solange', nearMe: false }
 ]
 
+const friendsNearMe = friends
+  .map( ( {id, name, nearMe} ) => ( {id, name, nearMe} ) )
+  .filter(friend => friend.nearMe)
 
-
+console.log(friendsNearMe)
 /*
   06
 
@@ -72,6 +90,13 @@ const friends = [
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
+const towMethod = numbers
+  .filter(number => number % 2 === 1)
+  .reduce( (acc, number) => {
+  return acc + number
+}, 0)
+
+console.log(towMethod)
 /*
   07
 
@@ -92,3 +117,8 @@ const data = [{
   country: 'Indonesia',
   population: 263991379
 }]
+
+console.log(data
+  .filter(country => country.country != 'China')
+  .reduce((acc, country) => 
+    { return acc + country.population},0))
