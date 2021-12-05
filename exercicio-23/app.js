@@ -24,13 +24,11 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
-const peopleCopy = people.map(({firstName, lastName, score}) => {
-  return ({firstName, lastName, score})
-})
+const peopleOrderedByScore = people
+  .map(({firstName, lastName, score}) => ({firstName, lastName, score}))
+  .sort((itemOne, itemTow) => itemOne.score - itemTow.score)
 
-peopleCopy.sort((itemOne, itemTow) => itemOne.score - itemTow.score)
-
-console.log(peopleCopy)
+console.log(peopleOrderedByScore)
 /*
   03
 
@@ -43,23 +41,19 @@ console.log(peopleCopy)
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 
-const onleThreWordsInName = animals.filter( animal => {
-  if(animal.length === 3) {
-    return animal
-  }
-})
+const threeLetterAnimals = animals.filter( ({ length }) => length === 3)
 
-console.log(onleThreWordsInName)
+
 /*
   04
 
-  - Baseado no array "animals", gere um novo array com a quantidade de letras do 
+  - Base({ length }) arrals", gere um novo array com a quantidade de letras do 
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
-const animaisLength = animals.map(animal => animal.length)
+const animaisNamesLength = animals.map( ({ length }) => length)
 
-console.log(animaisLength)
+
 /*
   05
 
@@ -76,11 +70,9 @@ const friends = [
   { id: 5, name: 'Solange', nearMe: false }
 ]
 
-const friendsNearMe = friends
-  .map( ( {id, name, nearMe} ) => ( {id, name, nearMe} ) )
-  .filter(friend => friend.nearMe)
+const friendsNearMe = friends.filter( ({ nearMe }) => nearMe)
+const nameOfFriendsNearMe = friendsNearMe.map( ( { name } ) => name)
 
-console.log(friendsNearMe)
 /*
   06
 
@@ -90,13 +82,11 @@ console.log(friendsNearMe)
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
-const towMethod = numbers
-  .filter(number => number % 2 === 1)
-  .reduce( (acc, number) => {
-  return acc + number
-}, 0)
+const oddNumbersSum = numbers
+  .filter(number => number % 2)
+  .reduce( (acc, number) => acc + number, 0)
 
-console.log(towMethod)
+
 /*
   07
 
@@ -118,7 +108,6 @@ const data = [{
   population: 263991379
 }]
 
-console.log(data
-  .filter(country => country.country != 'China')
-  .reduce((acc, country) => 
-    { return acc + country.population},0))
+const populationsSum = data
+  .filter( ({ country }) => country !== 'China')
+  .reduce((acc, { population }) => acc + population, 0)
