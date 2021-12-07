@@ -33,12 +33,11 @@ inputSearchTodo.addEventListener('input', event => {
         .forEach( todo => {
             todo.classList.remove('d-flex')
             todo.classList.add('hidden')
-    })
+        })
     Array.from(todoContainer.children)
         .filter( todo => todo.textContent.toLowerCase().includes(inputValue))
         .forEach( todo => {
             todo.classList.remove('hidden')
             todo.classList.add('d-flex')
         })
-   
 })
