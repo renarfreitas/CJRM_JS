@@ -18,14 +18,17 @@ formAddToDo.addEventListener('submit', event => {
     }
 })
 
+// - Remoção
 todoContainer.addEventListener('click', event => {
-    const clickedElement = event.target
-
-    if (Array.from(clickedElement.classList).includes('delete')) { // convertendo o domtokenlist em um array
-        clickedElement.parentElement.remove() // removendo o pai do elemento clickado.
-    }
+    // const clickedElement = event.target
+    const clickedElement = document.getElementsByClassName('delete')
+    console.log(clickedElement[0])
+    // if (Array.from(clickedElement.classList).includes('delete')) { // convertendo o domtokenlist em um array
+    //     clickedElement.parentElement.remove() // removendo o pai do elemento clickado.
+    // }
 })
 
+// - Busca
 inputSearchTodo.addEventListener('input', event => {
     const inputValue = event.target.value.trim().toLowerCase()
     Array.from(todoContainer.children)
