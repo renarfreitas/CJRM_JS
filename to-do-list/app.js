@@ -1,7 +1,7 @@
 const formAddToDo = document.querySelector('.form-add-todo')
 const inputSearchTodo = document.querySelector('.form-search input')
 const todoContainer = document.querySelector('.todos-container')
-
+// - Inserção
 formAddToDo.addEventListener('submit', event => {
     event.preventDefault()
 
@@ -9,7 +9,7 @@ formAddToDo.addEventListener('submit', event => {
 
     if(inputValue){
         todoContainer.innerHTML += `
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-li="list">
             <span>${inputValue}</span>
             <i class="far fa-trash-alt delete"></i>
             </li>
@@ -17,17 +17,14 @@ formAddToDo.addEventListener('submit', event => {
         event.target.reset()
     }
 })
-
 // - Remoção
 todoContainer.addEventListener('click', event => {
-    // const clickedElement = event.target
-    const clickedElement = document.getElementsByClassName('delete')
-    console.log(clickedElement[0])
-    // if (Array.from(clickedElement.classList).includes('delete')) { // convertendo o domtokenlist em um array
-    //     clickedElement.parentElement.remove() // removendo o pai do elemento clickado.
-    // }
-})
+    const clickedElement = event.target
+    if (Array.from(clickedElement.classList).includes('delete')) { // convertendo o domtokenlist em um array
+        clickedElement.parentElement.remove() // removendo o pai do elemento clickado.
+    }
 
+})
 // - Busca
 inputSearchTodo.addEventListener('input', event => {
     const inputValue = event.target.value.trim().toLowerCase()
