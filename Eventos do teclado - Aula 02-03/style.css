@@ -1,0 +1,28 @@
+body {
+  background: #eee;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  min-width: 200px;
+  margin: 40px auto;
+  background: white;
+  padding: 10px;
+}
+
+input, button {
+  display: block;
+  margin: 10px auto;
+  padding: 4px;
+}
+
+.success {
+  border: 2px solid green;
+}
+
+.error {
+  border: 2px solid red;
+}
