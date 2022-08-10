@@ -1,45 +1,75 @@
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
-  <title>To-do List | CJRM</title>
-</head>
-<body class="bg-dark">
-  <div class="container">
-
-    <header class="text-center text-light my-4">
-      <h1 class="mb-4">To-do List</h1>
-      <form class="form-search">
-        <input class="form-control m-auto" type="text" name="search" placeholder="Buscar to-do" autofocus />
-      </form>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do list | CJRM</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">To-do List</a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+        </div>
+      </nav>
     </header>
-
-    <ul class="todos-container list-group mx-auto text-light">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>Assistir Breaking Bad</span>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>Planejar aulas</span>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>Fazer exercícios físicos</span>
-        <i class="far fa-trash-alt delete"></i>
-      </li>
-    </ul>
-
-    <form class="form-add-todo text-center my-4">
-      <label class="text-light">Adicionar to-do</label>
-      <input class="form-control m-auto" type="text" name="add" />
-    </form>
-  </div>
-
-  <script src="./app.js"></script>
-</body>
+    <main class="container">
+      <form class="form-add-todo">
+        <header>
+          <div class="mb-3">
+            <label for="text">Add to-do</label>
+            <input type="text" name="add" autofocus />
+            <button type="submit" class="btn btn-primary">Add</button>
+            <br />
+            <br />
+          </div>
+        </header>
+        <ul class="list-group"></ul>
+        <br />
+        <button type="button" class="delete">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-trash"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+            ></path>
+          </svg>
+          Recycle to-do
+        </button>
+        <br />
+        <br />
+        <label for="text">Find to-do</label>
+        <input class="findTodo" type="text" />
+        <button type="submit" class="btn btn-success">Find</button>
+        <br />
+        <br />
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>
