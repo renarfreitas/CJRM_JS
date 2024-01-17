@@ -44,7 +44,7 @@ const myFavoriteTom = tom + ' ' + firstTom
 - Exiba a "js" no console do browser;
 */
 const programmingLanguage = 'JavaScript'
-const js = programmingLanguage[0]+programmingLanguage[4]
+const js = programmingLanguage[0] + programmingLanguage[4]
 
 // console.log(js)
 /*
@@ -55,7 +55,7 @@ const js = programmingLanguage[0]+programmingLanguage[4]
 - Exiba a "mdn" no console do browser;
 */
 const mozilla = 'Mozilla Developer Network'
-const mdn = mozilla[0]+mozilla[8]+mozilla[18]
+const mdn = mozilla[0] + mozilla[8] + mozilla[18]
 
 // console.log(mdn)
 /*
@@ -85,7 +85,7 @@ let randomWord = 'Araponga'
 */
 
 const summerMessage = 'O VERÃO CHEGA NESTE FIM DE SEMANA'
-
+// console.log(summerMessage.toLowerCase())
 // console.log(summerMessage.toLowerCase())
 /*
 10 - Comente o console.log acima, e,
@@ -95,14 +95,14 @@ const summerMessage = 'O VERÃO CHEGA NESTE FIM DE SEMANA'
 - Não digite a nova string manualmente.
 */
 const winterMessage = 'o inverno está chegando'
-
+// console.log(winterMessage.toUpperCase())
 // console.log(winterMessage.toUpperCase())
 /*
 11 - Comente o console.log acima, e,
 
 - Exiba, no console, o index do caractere "v" da "winterMessage";
 */
-
+// console.log(winterMessage.indexOf('v'))
 // console.log(winterMessage.indexOf('v'))
 
 /*
@@ -110,7 +110,7 @@ const winterMessage = 'o inverno está chegando'
 
 - Exiba, no console, o index da última ocorrência do caractere "n" da "winterMessage".
 */
-
+// console.log(winterMessage.lastIndexOf('n'))
 // console.log(winterMessage.lastIndexOf('n'))
 
 /*
@@ -120,6 +120,8 @@ const winterMessage = 'o inverno está chegando'
 - Não digite a string "J.K." manualmente;
 */
 const harryPotterAuthor = 'J.K. Rowling'
+
+// console.log(harryPotterAuthor[0] + harryPotterAuthor[2])
 
 // console.log(harryPotterAuthor.slice(0, 4))
 /*
@@ -132,6 +134,8 @@ const harryPotterAuthor = 'J.K. Rowling'
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 
 const realBestMovie = bestMovie.replace('La la land', 'Moonlight')
+
+// console.log(realBestMovie)
 // console.log(realBestMovie)
 /*
 15 - Comente o console.log acima, e,
@@ -168,7 +172,7 @@ episodes--
 - Utilize o operador addition assignment para atualizar o valor da let "episodes" para 10;
 - Após a atribuição, exiba a let "episodes" no console.
 */
-episodes+=4
+episodes += 4
 // console.log(episodes)
 /*
 19 - Comente o console.log acima, e,
@@ -177,8 +181,11 @@ episodes+=4
 - Insira a let "episodes" no lugar de "NUMERO_DE_EPISÓDIOS";
 - Exiba a "allEpisodes" no console.
 */
+let test = document.querySelector('h1')
+
 const allEpisodes = `O nº de episódios é: ${episodes}`
 // console.log(allEpisodes)
+// test.innerText = allEpisodes
 /*
 20 - Comente o console.log acima, e,
 
@@ -188,7 +195,7 @@ const allEpisodes = `O nº de episódios é: ${episodes}`
 - Não use template strings.
 */
 
-const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da década.'
+const bookMessage = `'O Conto da Aia' é um dos livros mais vendidos da década.`
 
 // console.log(bookMessage)
 /*
@@ -203,7 +210,12 @@ const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da décad
 */
 
 const name = 'walter white'
-let newName = name[0].toUpperCase()+name.slice(1, 6) + ' ' + name[7].toUpperCase()+name.slice(8)
+let newName =
+  name[0].toUpperCase() +
+  name.slice(1, 6) +
+  ' ' +
+  name[7].toUpperCase() +
+  name.slice(8)
 
 // console.log(newName, name)
 /*
@@ -216,7 +228,10 @@ let newName = name[0].toUpperCase()+name.slice(1, 6) + ' ' + name[7].toUpperCase
 - Exiba a "newName" no console;
 */
 
-newName = `${name[0].toUpperCase()}${name.slice(1, 6)} ${name[7].toUpperCase()}${name.slice(8)}`
+newName = `${name[0].toUpperCase()}${name.slice(
+  1,
+  6
+)} ${name[7].toUpperCase()}${name.slice(8)}`
 
 // console.log(newName)
 
