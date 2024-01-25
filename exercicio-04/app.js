@@ -13,17 +13,18 @@
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 */
 
-const my3FavoriteTVShows = ['Avanger', 'Mandalorian', 'What if...']
-const sentece = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(', ')}`.replace('an,', 'an e')
+const my3FavoriteTVShows = ['Avanger', 'Mandalorian', 'What if...!?']
+const sentece = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(
+  ', '
+)}`.replace('an,', 'an e')
 
-// console.log(sentece);
+console.log(sentece)
 /*
   02 - Comente o console.log() acima e:
 
   - Exiba no console um boolean indicando se o array de séries que você criou  
     possui 3 itens.
 */
-
 
 // console.log(my3FavoriteTVShows.length === 3)
 
@@ -40,7 +41,7 @@ const sentece = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(', '
 const randomTVShow = 'Watchmen'
 const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow)
 
-// console.log(isRandomTVShowIncluded)
+console.log(isRandomTVShowIncluded)
 /*
   04 - Comente o console.log() acima e:
 
@@ -54,7 +55,7 @@ const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow)
 
 const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTVShowIncluded}.`
 
-// console.log(typeSentence)
+console.log(typeSentence)
 /*
   05 - Comente o console.log() acima e:
 
@@ -68,11 +69,15 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
   "A string que a "typeSentence" armazena tem mais de NÚMERO_DE_CARACTERES  
   caracteres? BOOLEAN."
 */
-const numberOfCaracter = 39
+const numberToCheck = 39
 const typeSentenceSize = typeSentence.length
-const comparation = typeSentenceSize > numberOfCaracter
+const comparation = typeSentenceSize > numberToCheck
 
-// console.log(`A string que a "typeSentence" armazena tem mais de ${numberOfCaracter} caracteres? ${String(comparation).replace('t', 'T')}.`)
+console.log(
+  `A string que a "typeSentence" armazena tem mais de ${numberToCheck} caracteres? ${String(
+    comparation
+  ).replace('t', 'T')}.`
+)
 
 /*
   06 - Comente o console.log() acima e:
@@ -84,11 +89,13 @@ const comparation = typeSentenceSize > numberOfCaracter
   BOOLEAN."
 */
 
-const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
+const falsyValues = [0, '', false, '', ``, null, undefined, NaN]
 const sizefalsyValues = falsyValues.length
 const booleanFalsyValues = falsyValues[2]
 
-// console.log(`Todos os ${sizefalsyValues} itens do array "falsyValues" são falsy. Inclusive o ${booleanFalsyValues}.`)
+console.log(
+  `Todos os ${sizefalsyValues} itens do array "falsyValues" são falsy. Inclusive o ${booleanFalsyValues}.`
+)
 /*
   07 - Comente o console.log() acima e:
 
@@ -100,7 +107,7 @@ const booleanFalsyValues = falsyValues[2]
 const crazyOperation = null + 1
 const crazyConversion = Boolean(crazyOperation)
 
-// console.log(crazyConversion)
+console.log(crazyConversion)
 /*
   08 - Comente o console.log() acima e:
 
@@ -114,10 +121,12 @@ const crazyConversion = Boolean(crazyOperation)
   é: BOOLEAN."
 */
 const ages = [31, 82, 61, 11]
-const agesSum = ages[0]+ages[2]
+const agesSum = ages[0] + ages[2]
 const booLean = agesSum <= 92
 
-// console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação é: ${booLean}.`)
+console.log(
+  `A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação é: ${booLean}.`
+)
 /*
   09 - Comente o console.log() acima e:
 
