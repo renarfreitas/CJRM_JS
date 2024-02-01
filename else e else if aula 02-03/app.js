@@ -1,10 +1,10 @@
 // else e else if statements
-const password = 'oi123'
+const password = 'oi14586112211'
 
-if (password.length >=12) {
-    console.log('senha muito forte =)')
-} else if(password.length >= 8) {
-    console.log('essa senha tem 8 ou mais caracteres')
+if (password.length >= 12) {
+  console.log('senha muito forte =)')
+} else if (password.length >= 8) {
+  console.log('essa senha tem 8 ou mais caracteres')
 } else {
-    console.log('a senha deve contar 8 ou mais caracteres')
+  console.log('a senha deve contar 8 ou mais caracteres')
 }
