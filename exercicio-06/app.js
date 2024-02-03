@@ -36,6 +36,11 @@ if (fruits.includes('abacaxi')) {
 
 console.log(fruitSentence)
 
+// if (fruits.includes('abacaxi') || fruits.includes('pera')) {
+//   fruitSentence = 'Nem pera nem abacaxi existem no array "fruits".'
+// }
+
+// console.log(fruitSentence)
 /*
   02
 
@@ -49,7 +54,7 @@ console.log(fruitSentence)
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
 const timenow = 18
-const isMorning = timenow >= 6 && timenow <= 11 
+const isMorning = timenow >= 6 && timenow <= 11
 const isAfternom = timenow >= 12 && timenow <= 17
 let phrase = ''
 
@@ -80,7 +85,7 @@ let princeMessage = null
 const isChild = myAge <= 7
 const isOlder = myAge >= 65
 
-if(isChild || isOlder) {
+if (isChild || isOlder) {
   princeMessage = 'Para você, a entrada é grátis!'
 } else {
   princeMessage = 'A entrada é R$ 30,00.'
@@ -99,12 +104,11 @@ console.log(princeMessage)
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 let numbersBetween11and90 = []
 
-
-for(let i = 0; i < numbers.length; i++) {
+for (let i = 0; i < numbers.length; i++) {
   const number = numbers[i]
   const isNumberBetween11And90 = number >= 11 && number <= 90
 
-  if(isNumberBetween11And90) {
+  if (isNumberBetween11And90) {
     numbersBetween11and90.push(number)
   }
 }
@@ -123,19 +127,30 @@ console.log(numbersBetween11and90)
   "O crazyArray tem X booleans, X números e X strings."
 */
 
-const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+const crazyArray = [
+  true,
+  869,
+  'oi',
+  71,
+  false,
+  83,
+  '35',
+  true,
+  397,
+  'js',
+  false
+]
 let plusStrings = ''
 let plusBooleans = null
 let plusNumber = null
-
 
 for (let i = 0; i < crazyArray.length; i++) {
   const number = crazyArray[i]
   const typeOfItem = typeof number
   const isABoolean = typeOfItem === 'boolean'
-  const isAString = typeOfItem === 'string' 
+  const isAString = typeOfItem === 'string'
 
-  if(isAString) {
+  if (isAString) {
     plusStrings++
   } else if (isABoolean) {
     plusBooleans++
@@ -168,23 +183,22 @@ console.log(sentences)
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
 let isEvenNumber = []
-let isOddnumber = []
+let isOddNumber = []
 
-for (let i = 0; i< randomNumbers.length; i++) {
+for (let i = 0; i < randomNumbers.length; i++) {
   const arrayItem = randomNumbers[i]
   const isAEvenNumbers = arrayItem % 2 === 0
-    
-  if(isAEvenNumbers) {
+
+  if (isAEvenNumbers) {
     isEvenNumber.push(arrayItem)
   } else {
-    isOddnumber.push(arrayItem)
+    isOddNumber.push(arrayItem)
   }
 }
 
-const oddNumbersString = isOddnumber.join(', ').replace(', 3', ' e 3')
+const oddNumbersString = isOddNumber.join(', ').replace(', 3', ' e 3')
 const evenNumbersString = isEvenNumber.join(', ').replace(', 5', ' e 5')
 
 const complitSentence = `Numeros ímpares: ${oddNumbersString}. Números pares: ${evenNumbersString}.`
-
 
 console.log(complitSentence)
