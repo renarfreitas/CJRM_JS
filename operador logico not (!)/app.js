@@ -2,7 +2,7 @@
 let isUserLoggedIn = false
 
 if (!isUserLoggedIn) {
-    console.log('Você precisa fazer login para continuar')
+  console.log('Você precisa fazer login para continuar')
 }
 
 console.log(!true)
