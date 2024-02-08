@@ -1,22 +1,26 @@
 // A condicional switch
-const grade = 'B'
+const grade = 'f'
 
 switch (grade) {
-    case 'A':
-        console.log('Você tirou um A')
-        break
-    case 'B':
-        console.log('Você tirou um B')
-        break
-    case 'C':
-        console.log('Você tirou um C')
-        break
-    case 'D':
-        console.log('Você tirou um D')
-        break
-    case 'E':
-        console.log('Você tirou um E')
-        break
-    default:
-        console.log('nota  inválida')
+  case 'A':
+    console.log(`Voce tirou um ${grade}`)
+    break
+
+  case 'B':
+    console.log(`Voce tirou um ${grade}`)
+    break
+
+  case 'C':
+    console.log(`Voce tirou um ${grade}`)
+    break
+
+  case 'D':
+    console.log(`Voce tirou um ${grade}`)
+    break
+
+  case 'E':
+    console.log(`Você tirou um ${grade}`)
+    break
+  default:
+    console.log(`A nota ${grade}, é inválida!`)
 }
