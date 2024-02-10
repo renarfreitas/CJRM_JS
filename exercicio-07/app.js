@@ -5,7 +5,7 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(!true, !false)
+console.log(!false, !true)
 
 /*
   02
@@ -19,11 +19,11 @@ console.log(!true, !false)
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 let showmansage = ''
 
-for (let i = 0; i< animals.length; i++) {
+for (let i = 0; i < animals.length; i++) {
   const animal = animals[i]
-  const  thereIsAnAnimal = animal.includes('leão')
+  const thereIsAnAnimal = animal.includes('leão')
 
-  if (!thereIsAnAnimal){
+  if (!thereIsAnAnimal) {
     showmansage = 'Leão não existe no array animals.'
   } else {
     showmansage = 'Existe um leão no array animals.'
@@ -49,13 +49,12 @@ const limit = 400
 for (let i = 0; i < randomNumbers.length; i++) {
   const number = randomNumbers[i]
   const morethan400 = soma > limit
-  
-  if(morethan400) {
+
+  if (morethan400) {
     break
   }
 
   soma += number
-  
 }
 
 console.log(`A soma ultrapassou ${limit}. Até aqui, o valor atual é ${soma}.`)
@@ -68,14 +67,22 @@ console.log(`A soma ultrapassou ${limit}. Até aqui, o valor atual é ${soma}.`)
   - Exiba a frase no console.
 */
 
-const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
+const sentence = [
+  'A',
+  'certeza',
+  'dúvida',
+  'é',
+  'o',
+  'princípio',
+  'da',
+  'sabedoria.'
+]
 let concatSentence = ''
 
 for (let i = 0; i < sentence.length; i++) {
   const word = sentence[i]
   const wordIsIncluded = word === 'certeza'
-  
-  
+
   if (wordIsIncluded) {
     continue
   }
@@ -99,9 +106,29 @@ console.log(concatSentence)
   "
 */
 
-const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
-let isABoolean  = 0
-let totalIterations = 0 
+const randomValues = [
+  57,
+  false,
+  'JS',
+  [],
+  true,
+  'HTML',
+  31,
+  null,
+  false,
+  'CSS',
+  97,
+  true,
+  'Git',
+  11,
+  'sticker',
+  false,
+  'GitHub',
+  true,
+  null
+]
+let isABoolean = 0
+let totalIterations = 0
 let stringsAmount = 0
 let firstFourStrings = []
 
@@ -111,24 +138,26 @@ for (let i = 0; i < randomValues.length; i++) {
   const isItemAString = typpeOfItem === 'string'
   const isItemABoolen = typpeOfItem === 'boolean'
 
-  if(stringsAmount === 4) {
+  if (stringsAmount === 4) {
     break
   }
 
-  if(isItemAString) {
+  if (isItemAString) {
     stringsAmount++
     firstFourStrings.push(item)
   }
 
-  if(isItemABoolen) {
+  if (isItemABoolen) {
     isABoolean++
   }
 
   totalIterations++
 }
 
-const lastItem = firstFourStrings[firstFourStrings.length - 1 ]
-const fourStrings = firstFourStrings.join(', ').replace(`, ${lastItem}`, ` e ${lastItem}`)
+const lastItem = firstFourStrings[firstFourStrings.length - 1]
+const fourStrings = firstFourStrings
+  .join(', ')
+  .replace(`, ${lastItem}`, ` e ${lastItem}`)
 
 console.log(`3 informações sobre o array randomValues:
   - As primeiras 4 strings são ${fourStrings};
@@ -158,19 +187,20 @@ console.log(`3 informações sobre o array randomValues:
 const drinkType = 'água'
 let drinkMessage = ''
 
-switch(drinkType){
+switch (drinkType) {
   case 'água':
-    drinkMessage = 'Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.'
+    drinkMessage =
+      'Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.'
     break
   case 'refrigerante':
-    drinkMessage = 'Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.'
+    drinkMessage =
+      'Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.'
     break
   case 'suco':
     drinkMessage = 'Bebida produzida do líquido extraído de frutos.'
     break
   default:
     drinkMessage = 'Bebida Desconhecida'
-
 }
 
 console.log(drinkMessage)
@@ -193,7 +223,7 @@ let numberMessage = 'O valor da variável é: '
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
 
-switch(number) {
+switch (number) {
   case 0:
     numberMessage += `${number}`
     break
