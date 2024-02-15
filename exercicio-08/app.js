@@ -6,11 +6,11 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-// function twoNames (number1 = 1, number2 = 1) {
-//   return number1 * number2
-// }
-// const multi = twoNames(2,2)
-// console.log(multi)
+function twoNumbers(number1 = 0, number2 = 0) {
+  return number1 * number2
+}
+const multi = twoNumbers(2, 2)
+console.log(multi)
 /*
   02
 
@@ -18,11 +18,11 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-const division = function(number1 = 1, number2 = 1){
+const division = function (number1 = 0, number2 = 0) {
   return number1 / number2
 }
-console.log(division(2,5))
- 
+console.log(division(2, 5))
+
 /*
   03
 
@@ -35,13 +35,14 @@ console.log(division(2,5))
 
   "Esta é a Xª vez que essa string é exibida."
 */
-// const seven = function(name = 'Voce deve passar um valor como argumento') {
-//   for(let i = 1; i <= 7; i++){
-//     console.log(`Esta é a ${i}ª vez que a string "${name} é exibida.`)
-//   }
-// }
+const seven = function (name = 'Voce deve passar um valor como argumento') {
+  for (let i = 0; i < 7; i++) {
+    let counter = i + 1
+    console.log(`Esta é a ${counter}ª vez que a string "${name}" é exibida.`)
+  }
+}
 
-// seven('renar')
+seven('renar')
 /*
   04
 
@@ -53,18 +54,34 @@ console.log(division(2,5))
     função.
 */
 
-const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+const millennialWords = [
+  'lol',
+  'yolo',
+  'troll',
+  'stalkear',
+  'selfie',
+  'influencer',
+  'crush',
+  'fitness',
+  'hater',
+  'bae',
+  'random',
+  'kawaii',
+  'outfit',
+  'mood',
+  'fail'
+]
 
-const transofrmToUpperCase = function (array=[]) {
-  let newarray2 =[]
+const transofrmToUpperCase = function (array = []) {
+  let newarray = []
 
-  for(let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     const wordInUpperCase = array[i].toUpperCase()
-    
-    newarray2.push(wordInUpperCase)
+
+    newarray.push(wordInUpperCase)
   }
-  
-  return newarray2
+
+  return newarray
 }
 
 const millennialWordsInUpeerCase = transofrmToUpperCase(millennialWords)
@@ -87,21 +104,25 @@ let positive = 0
 let negative = 0
 
 const isPositeve = function (number = 0) {
-  return number >=1
+  return number >= 1
 }
 
-for(let i = 0; i < randomNumbers.length; i++) {
+for (let i = 0; i < randomNumbers.length; i++) {
   const number = randomNumbers[i]
   const isAPositive = number > 0
 
-  if(isPositeve(number)){
+  if (isPositeve(number)) {
     positive++
   } else {
     negative++
   }
 }
 
-console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${positive} positivos e ${negative} negativos.`)
+const totalNumber = randomNumbers.length
+
+console.log(
+  `O array "randomNumbers" possui ${totalNumber} números, sendo ${positive} positivos e ${negative} negativos.`
+)
 /*
   06
 
@@ -111,20 +132,22 @@ console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, se
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
-const getOddNumbers = function (array=[]){
+const getOddNumbers = function (array = []) {
   let newArray = []
 
-  for(let i = 0; i < array.length; i++){
-    const number  = array[i]
+  for (let i = 0; i < array.length; i++) {
+    const number = array[i]
     const isAOddNumber = number % 2 !== 0
 
-    if(isAOddNumber) {
+    if (isAOddNumber) {
       newArray.push(number)
     }
   }
   return newArray
 }
-console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
+console.log(
+  getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+)
 
 /*
   07
@@ -133,34 +156,90 @@ console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80
 */
 
 const functions = [
-  function () { return 'Plymouth' },
-  function () { return 'é' },
-  function () { return 'uma' },
-  function () { return 'cidade' },
-  function () { return 'fantasma' },
-  function () { return 'localizada' },
-  function () { return 'na' },
-  function () { return 'ilha' },
-  function () { return 'de' },
-  function () { return 'Montserrat,' },
-  function () { return 'um' },
-  function () { return 'território' },
-  function () { return 'ultramarino' },
-  function () { return 'do' },
-  function () { return 'Reino' },
-  function () { return 'Unido' },
-  function () { return 'localizado' },
-  function () { return 'na' },
-  function () { return 'cadeia' },
-  function () { return 'de' },
-  function () { return 'Ilhas' },
-  function () { return 'de' },
-  function () { return 'Sotavento' },
-  function () { return 'nas' },
-  function () { return 'Pequenas' },
-  function () { return 'Antilhas,' },
-  function () { return 'Índias' },
-  function () { return 'Ocidentais.' }
+  function () {
+    return 'Plymouth'
+  },
+  function () {
+    return 'é'
+  },
+  function () {
+    return 'uma'
+  },
+  function () {
+    return 'cidade'
+  },
+  function () {
+    return 'fantasma'
+  },
+  function () {
+    return 'localizada'
+  },
+  function () {
+    return 'na'
+  },
+  function () {
+    return 'ilha'
+  },
+  function () {
+    return 'de'
+  },
+  function () {
+    return 'Montserrat,'
+  },
+  function () {
+    return 'um'
+  },
+  function () {
+    return 'território'
+  },
+  function () {
+    return 'ultramarino'
+  },
+  function () {
+    return 'do'
+  },
+  function () {
+    return 'Reino'
+  },
+  function () {
+    return 'Unido'
+  },
+  function () {
+    return 'localizado'
+  },
+  function () {
+    return 'na'
+  },
+  function () {
+    return 'cadeia'
+  },
+  function () {
+    return 'de'
+  },
+  function () {
+    return 'Ilhas'
+  },
+  function () {
+    return 'de'
+  },
+  function () {
+    return 'Sotavento'
+  },
+  function () {
+    return 'nas'
+  },
+  function () {
+    return 'Pequenas'
+  },
+  function () {
+    return 'Antilhas,'
+  },
+  function () {
+    return 'Índias'
+  },
+  function () {
+    return 'Ocidentais.'
+  }
 ]
 
 let sentence = ''
