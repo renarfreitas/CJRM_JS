@@ -1,4 +1,4 @@
-const name = 'Renar'
+const name = 'Renar Freitas'
 
 // funções
 const sayHai = () => 'oi'
