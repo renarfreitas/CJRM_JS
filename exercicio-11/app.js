@@ -5,11 +5,11 @@
   - Ela deve ter um escopo global.
 */
 const name = 'Renar'
-for(let i = 0; i < 3; i++){
-  console.log(`Dentro do bloco de código: ${name}`)
-}
+// for(let i = 0; i < 3; i++){
+//   console.log(`Dentro do bloco de código: ${name}`)
+// }
 
-console.log(`Fora do bloco de código: ${name}`)
+// console.log(`Fora do bloco de código: ${name}`)
 /*
   02
 
@@ -24,11 +24,17 @@ console.log(`Fora do bloco de código: ${name}`)
   - Você sabe por que isso aconteceu?
 */
 const age = function () {
-  let idade = 39
+  let idade = 41
   console.log(idade)
 }
 
-// console.log(age())
+const idade = () => {
+  let idade = 41
+  return idade
+}
+
+age()
+console.log(idade())
 
 /*
   03
@@ -52,19 +58,19 @@ let car = {
   brand: 'Honda',
   colors: ['Preto', 'Branco', 'Cinza'],
   isRunining: false,
-  run () {
+  run() {
     this.isRunining = true
     return `O ${this.name} está em movimento`
   },
-  stop () {
+  stop() {
     this.isRunining = false
     return `O ${this.name} está parado`
   },
-  getColorsMessage () {
+  getColorsMessage() {
     const lastItem = this.colors[this.colors.length - 1]
     const colors = this.colors.join(', ').replace(lastItem, `e ${lastItem}`)
 
-    return `O ${this.name} está disponível nas cores ${colors}` 
+    return `O ${this.brand} ${this.name}, está disponível nas cores ${colors}`
   }
 }
 /*
