@@ -17,11 +17,18 @@ scoreOne = 100
 console.log(`socreONe: ${scoreOne} | socreTwo: ${scoreTwo}`)
 
 // Valores de referência
-let userOne = { name: 'Renar', age: 41 }
+let userOne = { name: 'Renar', age: 41, lastname: 'userOne' }
 let userTwo = userOne
 
 console.log(userOne, userTwo)
 
 userOne.age = 42
+userOne.name = 'Roger'
 
 console.log(userOne, userTwo)
+
+userOne = { name: 'Roger', score: 100 }
+
+console.log(userOne, userTwo)
+
+userOne.score = 200
