@@ -27,13 +27,13 @@ const best2019Movies = [
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
 
-let message = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
-const bestMovies = video => {
+let message = `Segundo o site Omelete, os melhores filmes de 2019 são:`
+const generateMoviesMessage = movie => {
   message += `
-  - ${video.title}, dirigido por ${video.directedBy}`
+  - ${movie.title}, dirigido por ${movie.directedBy}`
 }
 
-best2019Movies.forEach(bestMovies)
+best2019Movies.forEach(generateMoviesMessage)
 
 console.log(message)
 /*
@@ -56,20 +56,24 @@ const youtubeUser = {
   videos: {
     total: 111,
     recentVideos: [
-      { title: 'Introdução ao TDD - Parte 02 | JavaScript | Jest', length: '28:28' },
+      {
+        title: 'Introdução ao TDD - Parte 02 | JavaScript | Jest',
+        length: '28:28'
+      },
       { title: 'Introdução ao TDD | JavaScript | Jest', length: '19:29' },
       { title: 'Higher-order Functions | JavaScript', length: '47:38' }
     ]
   },
   about: {
-    description: '🔥 Ensino as pessoas a alcançarem a fluência em JavaScript! 🔥',
+    description:
+      '🔥 Ensino as pessoas a alcançarem a fluência em JavaScript! 🔥',
     socialNetworks: {
       twitter: 'https://twitter.com/rogermelodev',
       gitHub: 'https://github.com/Roger-Melo'
     },
     country: 'Brasil'
   },
-  getRecentVideos () {
+  getRecentVideos() {
     console.log(`Vídeos recentes de ${this.name}:`)
 
     this.videos.recentVideos.forEach(video => {
@@ -79,7 +83,6 @@ const youtubeUser = {
 }
 
 youtubeUser.getRecentVideos()
-
 
 /*
   03
@@ -97,7 +100,6 @@ console.log(Math)
 */
 
 const firstNumber = 8.3
-
 
 console.log(Math.ceil(firstNumber))
 
