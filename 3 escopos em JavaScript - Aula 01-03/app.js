@@ -1,24 +1,24 @@
 // O que é escopo?: A visibilidade de uma variável
-// function myFunc () {
-//     let cat = 'Zeca'
-//     const age = 3
-//     var color = 'cinza'
+// function myFunc() {
+//   let cat = 'Zeca'
+//   const age = 3
+//   var color = 'cinza'
 // }
 
 // myFunc()
 // console.log(color)
 
-// function myFunc () {
-//     let cat = 'Zeca'
-//     const age = 3
-//     var color = 'cinza'
-//     console.log(age)
+// function myFunc() {
+//   let cat = 'Zeca'
+//   const age = 3
+//   var color = 'cinza'
+//   console.log(age)
 // }
 
-// function myFunc2 () {
-//     var color = 'branco'
-//     const age = 5
-//     console.log(age)
+// function myFunc2() {
+//   var color = 'branco'
+//   const age = 5
+//   console.log(age)
 // }
 
 // myFunc()
@@ -53,18 +53,18 @@
 // Escopo Léxico
 
 const external = () => {
-    // const book = 'Sapiens'
+  //   const book = 'Sapiens'
 
-    const internal = () => {
-        const book = 'Os testamentos'
-        
-        const extraInternal = () => {
-            // const book = 'Sapiens'
-            console.log(book.toUpperCase())
-        }
+  const internal = () => {
+    // const book = 'Os testamentos'
 
-        extraInternal()
+    const extraInternal = () => {
+      const book = 'A Arte da Guerra'
+      console.log(book.toUpperCase())
     }
 
-    internal()
+    extraInternal()
+  }
+
+  internal()
 }
