@@ -9,16 +9,16 @@
 */
 
 const getCatInfo = () => {
-  const name = 'Marcos'
+  const name = 'Mimis'
   let age = 3
   const color = 'Cinza'
 
-  return {name, color, age}
+  return { name, color, age }
 }
 
 /*desestructure assigmente */
 
-const { name, age, color } = getCatInfo()
+const { name, age, color } = getCatInfo() // destructuring assignment
 
 console.log(`${name} é um gato ${color} de ${age} anos.`)
 /*
@@ -36,7 +36,7 @@ const external = () => {
     const extraInternal = () => {
       console.log(movie.toUpperCase())
     }
-    
+
     extraInternal()
   }
 
@@ -67,8 +67,10 @@ console.log(randomNumbers.reverse())
 
 let crazyArray = [
   { prop1: '1', prop2: '2' },
-  function getMessage () { return 'hi' },
-  [ 5, 96, 53  ]
+  function getMessage() {
+    return 'hi'
+  },
+  [5, 96, 53]
 ]
 
 crazyArray.shift()
@@ -91,9 +93,9 @@ const dogs = [
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
 
-const found = dogs.find(nome => nome.name === 'Zequinha')
+const searchDog = dogs.find(nome => nome.name === 'Zequinha')
 
-console.log(found)
+console.log(searchDog)
 /*
   06
 
