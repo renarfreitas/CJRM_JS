@@ -1,12 +1,11 @@
 // Adicionando e modificando conteúdo em uma página
 const paragraph = document.querySelector('p')
 
-// paragraph.innerText += ' Texto inserido'
+// paragraph.innerText = ' Texto inserido'
 
 const paragraphs = document.querySelectorAll('p')
 
-
-// paragraphs.forEach( (paragraph, index)=> {
+// paragraphs.forEach((paragraph, index) => {
 //   paragraph.innerText += ` Novo texto ${index + 1}`
 // })
 
@@ -19,3 +18,7 @@ const people = ['Jonatan', 'Vinicius', 'Diego']
 people.forEach(person => {
   div.innerHTML += `<p>${person}</p>`
 })
+
+//getters and setters
+//get = obter
+//set = estabelecer
