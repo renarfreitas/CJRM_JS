@@ -8,7 +8,6 @@ const title = document.querySelector('h1')
 
 title.textContent = title.textContent.toUpperCase()
 
-
 /*
   02
 
@@ -16,11 +15,23 @@ title.textContent = title.textContent.toUpperCase()
   - Cada número deve estar dentro de uma <li> com a classe "number".
 */
 
-const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
+const numbers = [53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55]
 
 const ul = document.querySelector('.numbers')
-numbers.forEach(number => {
-  ul.innerHTML += `<li class="number">${number}</li>`
+// numbers.forEach(number => {
+//   ul.innerHTML += `<li class="number">${number}</li>`
+// })
+
+const insertNumberLi = n => {
+  ul.innerHTML += `<li class="number">${n}</li>`
+}
+let teste = []
+numbers.map(insertNumberLi)
+
+numbers.filter(n => {
+  if (n % 2 == 0) {
+    console.log(n)
+  }
 })
 /*
   03
@@ -33,14 +44,13 @@ const lis = document.querySelectorAll('.number')
 
 lis.forEach(li => {
   const isEven = Number(li.textContent) % 2 === 0
-  if(isEven){
+  if (isEven) {
     li.style.color = 'lightblue'
     return
   }
 
   li.style.color = 'pink'
 })
-
 
 /*
   04
@@ -51,8 +61,7 @@ lis.forEach(li => {
 */
 
 const body = document.body
- body.classList.add('body-background')
-
+body.classList.add('body-background')
 
 /*
   05
@@ -64,7 +73,10 @@ const body = document.body
 
 const link = document.querySelector('a')
 
-link.setAttribute('href','https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo')
+link.setAttribute(
+  'href',
+  'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo'
+)
 
 /*
   06
