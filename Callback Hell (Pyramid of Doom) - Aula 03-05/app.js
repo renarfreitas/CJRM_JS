@@ -1,28 +1,17 @@
 const present = new Date()
 
-const formatTimeUnit = unit => String(unit).length === 1 ? `0${unit}` : unit 
+console.log(present)
 
-const formatDate = date => {
-    const day = date.getDate()
-    const month = date.getMonth() + 1
-    const year = date.getFullYear()
-    return `${formatTimeUnit(day)}/${formatTimeUnit(month)}/${year}`
-}
+console.log(present.getFullYear())
+console.log(present.getMonth())
+console.log(present.getDate())
+console.log(present.getDay())
+console.log(present.getHours())
+console.log(present.getMinutes())
+console.log(present.getSeconds())
 
-console.log(formatDate(present))
+console.log('timestamp', present.getTime())
 
-
-
-const formatDateInfo = date => {
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const weekDay = date.getDay()
-    const monthDay = date.getDate()
-    const month = date.getMonth()
-    const year = date.getFullYear()
-    const weekDays = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado']
-    const monthName = ['Janeiro','Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',  'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-    return `${formatTimeUnit(hours)}:${formatTimeUnit(minutes)} - ${weekDays[weekDay]}, ${monthDay} de ${monthName[month]} de ${year}`
-}
-
-console.log(formatDateInfo(present))
+console.log('toDateString:',present.toDateString())
+console.log('toTimeString:',present.toTimeString())
+console.log('toLocalString:',present.toLocaleString())
