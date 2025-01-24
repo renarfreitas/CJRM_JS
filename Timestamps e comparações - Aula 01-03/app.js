@@ -11,7 +11,7 @@ console.log(past, present)
 const difference = present.getTime() - past.getTime() // Calculo da diferenceça entre o momento atual e um tempo passada dterminado.
 console.log(difference)
 
-const seconds = Math.round(difference / 1000)  // Convertendo o número decimal em um inteiro na forma padrão.
+const seconds = Math.round(difference / 1000)  // round Convertendo o número decimal em um inteiro na forma padrão.
 
 console.log({ seconds })
 
@@ -31,3 +31,9 @@ Curiosity about: The ECMAScript epoch and timestamps
 
 A JavaScript date is fundamentally specified as the number of milliseconds that have elapsed since the ECMAScript epoch, which is defined as January 1, 1970, UTC (equivalent to the UNIX epoch). 
 */
+
+/*
+Revisando o este conteúdo hoje!
+*/
+
+console.log(`Escrito há ${days} dias`)
