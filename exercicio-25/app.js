@@ -85,3 +85,7 @@ console.log(differenceInDays)
   aplicação do Quiz: 
   https://www.youtube.com/playlist?list=PLlAbYrWSYTiMGMxQf9JSoZUU1rgVpGPth
 */
+/*
+Aqui está o link do projeto:
+https://quiz-js-html-bootstrap.netlify.app/s
+*/
