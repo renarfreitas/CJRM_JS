@@ -15,4 +15,3 @@ const updateClock = () => {
 }
 
 setInterval(updateClock, 1000)
-
