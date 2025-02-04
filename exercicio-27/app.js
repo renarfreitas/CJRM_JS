@@ -9,7 +9,9 @@ console.log('Linha 2')
 console.log('Linha 3')
 console.log('Linha 4')
 
-
+setInterval(()=>{
+  console.log("Código assíncrono executado")
+}, 1000)
 
 console.log('Linha 5')
 console.log('Linha 6')
@@ -27,7 +29,11 @@ function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
 
-// x(logGreeting)
+x = () => {
+  return logGreeting()
+}
+
+x(logGreeting('Renar'))
 
 /*
   03
@@ -35,8 +41,7 @@ function logGreeting (name) {
   - O código abaixo possui uma parte que pode ser isolada. Isole-a.
 */
 
-const numbers = [3, 4, 10, 20]
-const lesserThanFive = numbers.filter(num => num < 5)
+const lesserThanFive = [3, 4, 10, 20].filter(num => num < 5)
 
 console.log(lesserThanFive)
 
@@ -63,7 +68,8 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
-
+car.color = 'azul'
+console.log(car)
 /*
   06
 
@@ -73,7 +79,13 @@ let car = { color: 'amarelo' }
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
-
+const threeArgument = (arg1, arg2, arg3) => {
+  if(arg1 || arg2 || arg3)
+    return 'A função deve ser invocada com 3 argumentos'
+  else
+    return 'A função foi invocada com 3 argumentos'
+}
+console.log(threeArgument('test','test1','test3'))
 /*
   07
 
