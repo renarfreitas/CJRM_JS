@@ -10,8 +10,8 @@ console.log('Linha 3')
 console.log('Linha 4')
 
 setInterval(()=>{
-  console.log("Código assíncrono executado")
-}, 1000)
+  console.log("Função de Callback executada")
+}, 2000)
 
 console.log('Linha 5')
 console.log('Linha 6')
@@ -29,19 +29,20 @@ function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
 
-x = () => {
-  return logGreeting()
+const x = calback => {
+  calback('Renar')
 }
 
-x(logGreeting('Renar'))
+x(logGreeting)
 
 /*
   03
 
   - O código abaixo possui uma parte que pode ser isolada. Isole-a.
 */
-
-const lesserThanFive = [3, 4, 10, 20].filter(num => num < 5)
+const numbers = [3, 4, 10, 20]
+const getLessThanFive = num => num < 5
+const lesserThanFive = numbers.filter(getLessThanFive)
 
 console.log(lesserThanFive)
 
@@ -52,11 +53,8 @@ console.log(lesserThanFive)
 */
 
 const prices = [12, 19, 7, 209]
-let totalPrice = 0
-
-for (let i = 0; i < prices.length; i++) {
-  totalPrice += prices[i]
-}
+const getTotalPrice = (acc, price) => acc + price
+const totalPrice = prices.reduce(getTotalPrice, 0)
 
 console.log(`Preço total: ${totalPrice}`)
 
@@ -68,8 +66,10 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
-car.color = 'azul'
-console.log(car)
+let secondCar = car
+secondCar.color = 'azul'
+
+console.log(car, secondCar)
 /*
   06
 
@@ -80,12 +80,13 @@ console.log(car)
     invocada com 3 argumentos'.
 */
 const threeArgument = (arg1, arg2, arg3) => {
-  if(arg1 || arg2 || arg3)
-    return 'A função deve ser invocada com 3 argumentos'
-  else
-    return 'A função foi invocada com 3 argumentos'
+  const isSomeParemeterUndefined = [arg1, arg2, arg3].includes(undefined)
+  return isSomeParemeterUndefined 
+    ? 'A função deve ser invocada com 3 argumentos'
+    : 'A função foi invocada com 3 argumentos'
 }
-console.log(threeArgument('test','test1','test3'))
+
+console.log(threeArgument('test','test1'))
 /*
   07
 
@@ -112,3 +113,24 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
+
+booksBox.addBooks = booksQuantity => {
+  if(booksBox.booksIn === booksBox.spaces) {
+    return "A caixa já está cheia"
+  } 
+
+  if(booksBox.booksIn + booksQuantity > booksBox.spaces){
+    const avaliableSpaces = booksBox.spaces - booksBox.booksIn
+    const fitPluralOrSingular = avaliableSpaces === 1 ? 'cabe' : 'cabem'
+    const bookpluralOrSingular = avaliableSpaces === 1 ? 'livro' : 'livros' 
+    return `Só ${fitPluralOrSingular} mais ${avaliableSpaces} ${bookpluralOrSingular}`
+  }
+  booksBox.booksIn += booksQuantity 
+
+    const bookpluralOrSingular = booksBox.booksIn === 1 ? 'livro' : 'livros'
+    return `Já há ${booksBox.booksIn} ${bookpluralOrSingular} na caixa`
+}
+
+console.log(booksBox.addBooks(6))
+console.log(booksBox)
+booksBox.addBooks()
