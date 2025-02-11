@@ -26,7 +26,7 @@ console.log('Linha 8')
 */
 
 function logGreeting (name) {
-  console.log(`olá, ${name}`)
+  console.log(`olá, ${name}`) // Função de Calback passada como argumento para a função x.
 }
 
 const x = calback => {
@@ -48,7 +48,7 @@ console.log(lesserThanFive)
 
 /*
   04
-
+s
   - Refatore o código abaixo.
 */
 
@@ -134,3 +134,5 @@ booksBox.addBooks = booksQuantity => {
 console.log(booksBox.addBooks(6))
 console.log(booksBox)
 booksBox.addBooks()
+
+// Não posso para!
