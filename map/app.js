@@ -1,8 +1,11 @@
-/*O método map: Método de array que pode ser usado quando se quer gerar um outro array, com a mesma quantidade de itens que o original, porem com os itens modificados.
+/*O método map: Método de array que pode ser usado quando se quer gerar 
+um novo array, com a mesma quantidade de itens que o original, porem 
+com os itens modificados.
 
 Ele não modifica o array original.
 
-O map recebe a declaração de uma função como argumento, e essa função pode receber 3 parametros, o item o index e o array, dos 3 somente o item é obrigatório.
+O map recebe a declaração de uma função como argumento, e essa função pode r
+eceber 3 parametros, o item o index e o array, dos 3 somente o item é obrigatório.
 
 A função que o map recebe, sempre retornar um valor, diferente do forEach!
 */
@@ -40,4 +43,3 @@ const saleProducts = products.map(product => {
 })
 
 console.log(saleProducts, products)
-
